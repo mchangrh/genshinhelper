@@ -85,7 +85,7 @@ class GenshinUser(Base):
 
     @property
     def client(self) -> genshin.Client:
-        client = genshin.Client(cookies=self.cookies, authkey=self.mihoyo_authkey)
+        client = genshin.Client(cookies=self.cookies, authkey=self.mihoyo_authkey, game=genshin.Game.GENSHIN)
         if self.main_genshin_uid:
             client.uid = self.main_genshin_uid
         return client
