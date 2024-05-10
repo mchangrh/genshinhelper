@@ -9,7 +9,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 FROM python:${PYVERSION}-slim
 
-COPY --from=python-reqs /usr/local/lib/python3.9/site-packages /usr/local/lib/python3.10/site-packages
+COPY --from=python-reqs /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
 
 WORKDIR /app
 COPY src .
